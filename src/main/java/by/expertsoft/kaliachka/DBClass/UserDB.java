@@ -10,10 +10,11 @@ import java.util.Map;
  */
 public interface UserDB {
 
-  //  void addUser() throws SQLException;
+    void addUser() throws SQLException;
     void updateUser() throws SQLException;
     void showUserList() throws SQLException;
     void readFromCSVToDB(String filePath) throws IOException, SQLException;
+    void writeFromDBToCSV(String filePath) throws IOException, SQLException;
     void closeConnection();
 
 }

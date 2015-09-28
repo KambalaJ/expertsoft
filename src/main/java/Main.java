@@ -14,8 +14,12 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) throws SQLException, IOException {
-        UserDBImpl userDB = new UserDBImpl();
-        userDB.updateUser();
+        UserDBImpl userDB = new UserDBImpl("jdbc:mysql://localhost:3306/testtask", "root", "root");
         userDB.showUserList();
+        userDB.addUser();
+        userDB.updateUser();
+        //userDB.readFromCSVToDB("test.csv");
+        //userDB.writeFromDBToCSV("test5.csv");
+        userDB.closeConnection();
     }
 }
